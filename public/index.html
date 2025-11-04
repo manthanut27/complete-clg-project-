@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Dine & Buffet</div>
+      <ul class="nav-links">
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="reservation.html">Reservation</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <h1>Experience Fine Dining</h1>
+    </div>
+
+    <div class="tagline">
+      <p>Where culinary artistry meets timeless elegance</p>
+    </div>
+
+    <div class="table-reservation">
+      <a href="reservation.html">
+        <p>Reserve Your Table</p>
+      </a>
+    </div>
+    <div>
+      <a href="menu.html" class="menu-btn">
+        <p>View Menu</p>
+      </a>
+    </div>
+    <section class="why-choose">
+      <h2>Why Choose Dine & buffet</h2>
+      <p class="subtitle">An exceptional dining experience awaits you</p>
+
+      <div class="features">
+        <div class="feature-card">
+          <i class="fas fa-calendar-check icon"></i>
+          <h3>Easy Booking</h3>
+          <p>
+            Reserve your table online in just a few clicks with real-time
+            availability.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-utensils icon"></i>
+          <h3>Exquisite Cuisine</h3>
+          <p>
+            Savor dishes crafted by world-class chefs using the finest
+            ingredients.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-clock icon"></i>
+          <h3>Flexible Hours</h3>
+          <p>Open seven days a week to accommodate your dining schedule.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-star icon"></i>
+          <h3>Premium Experience</h3>
+          <p>
+            Enjoy an unforgettable fine dining experience in an elegant
+            atmosphere.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reservation">
+      <h1>Ready to Dine With Us?</h1>
+      <p>
+        Book your table today and prepare for an unforgettable culinary journey
+      </p>
+      <button class="book-btn"><a href="reservation.html">Book Now</a></button>
+    </section>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Dine & buffet</h3>
+          <p>
+            Experience fine dining at its finest. Exquisite cuisine crafted with
+            passion and served with elegance.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>📍 thane , maharashtra</p>
+          <p>✉️ Manthanut27@gamil.com</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Hours</h3>
+          <p>Mon - Thu: 5:00 PM - 10:00 PM</p>
+          <p>Fri - Sat: 5:00 PM - 11:00 PM</p>
+          <p>Sunday: 4:00 PM - 9:00 PM</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Dine & buffet. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      const sections = document.querySelectorAll(
+        "section, .hero, .why-choose, .reservation, footer"
+      );
+
+      const revealSection = () => {
+        const triggerBottom = window.innerHeight * 0.85;
+
+        sections.forEach((sec) => {
+          const sectionTop = sec.getBoundingClientRect().top;
+
+          if (sectionTop < triggerBottom) {
+            sec.classList.add("show");
+          }
+        });
+      };
+
+      window.addEventListener("scroll", revealSection);
+      window.addEventListener("load", revealSection);
+    </script>
+  </body>
+</html>

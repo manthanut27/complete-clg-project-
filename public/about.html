@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Dine & Buffet</title>
+    <link rel="stylesheet" href="about.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Dine & Buffet</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="reservation.html">Reservation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section class="about-section">
+      <h1>About Us</h1>
+      <p>
+        Welcome to Dine & Buffet — where flavor meets passion! Founded with a
+        love for culinary creativity, we aim to deliver a world-class dining
+        experience that delights every palate.
+      </p>
+      <p>
+        Our chefs craft each dish with care, blending traditional techniques and
+        modern innovation to create unforgettable flavors.
+      </p>
+    </section>
+    <section class="foot">
+      <footer>
+        <div class="footer-container">
+          <div class="footer-section">
+            <h3>Dine & buffet</h3>
+            <p>
+              Experience fine dining at its finest. Exquisite cuisine crafted
+              with passion and served with elegance.
+            </p>
+          </div>
+          <div></div>
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>📍 thane , maharashtra</p>
+            <p>✉️ Manthanut27@gamil.com</p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Hours</h3>
+            <p>Mon - Thu: 5:00 PM - 10:00 PM</p>
+            <p>Fri - Sat: 5:00 PM - 11:00 PM</p>
+            <p>Sunday: 4:00 PM - 9:00 PM</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2025 Dine & buffet. All rights reserved.</p>
+        </div>
+      </footer>
+    </section>
+
+    <script>
+      const sections = document.querySelectorAll(
+        "section, .hero, .why-choose, .reservation, footer"
+      );
+
+      const revealSection = () => {
+        const triggerBottom = window.innerHeight * 0.85;
+
+        sections.forEach((sec) => {
+          const sectionTop = sec.getBoundingClientRect().top;
+
+          if (sectionTop < triggerBottom) {
+            sec.classList.add("show");
+          }
+        });
+      };
+
+      window.addEventListener("scroll", revealSection);
+      window.addEventListener("load", revealSection);
+    </script>
+  </body>
+</html>

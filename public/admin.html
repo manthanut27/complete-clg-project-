@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin - Reservations</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Admin - Reservation Records</h1>
+      <table border="1" width="100%" cellspacing="0" cellpadding="10">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Guests</th>
+            <th>Payment</th>
+          </tr>
+        </thead>
+        <tbody id="reservationTable"></tbody>
+      </table>
+    </div>
+
+    <script>
+      async function loadReservations() {
+        const res = await fetch("/admin/reservations");
+        const data = await res.json();
+        const table = document.getElementById("reservationTable");
+        table.innerHTML = data
+          .map(
+            (r) => `
+      <tr>
+        <td>${r.name}</td>
+        <td>${r.contact}</td>
+        <td>${r.date}</td>
+        <td>${r.time}</td>
+        <td>${r.guests}</td>
+        <td>${r.paymentMethod}</td>
+      </tr>
+    `
+          )
+          .join("");
+      }
+      loadReservations();
+    </script>
+  </body>
+</html>
